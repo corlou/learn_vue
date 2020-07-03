@@ -15,12 +15,13 @@
             <div>
                 <h1>Tasks({{ tasks.length }})</h1>
                 <ol class="list-group">
-                    <li v-repeat="task: tasks"
+                    <li v-repeat="task: tasks | inProcess"
                         class="list-group-item"
                     >
                         <span v-on="dblclick: editTask(task)">{{ task.body }}</span>
 
                         <button v-on="click: removeTask(task)">&#10007;</button>
+                        <button v-on="click: completeTask(task)">&#10004</button>
                     </li>
                 </ol>
             </div>
@@ -36,6 +37,7 @@
                 </div>
                 <button class="btn btn-primary">Add Task</button>
             </form>
+
         </div>
     </div>
 

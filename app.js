@@ -8,6 +8,14 @@ new Vue({
         newTask: ''
     },
 
+    filters: {
+        inProcess: function(tasks) {
+            return tasks.filter(function(task) {
+                return ! task.completed;
+            });
+        }
+    },
+
     methods: {
         addTask: function(e) {
             e.preventDefault();
@@ -29,13 +37,15 @@ new Vue({
 
             //focus the newTask input
             this.$$.newTask.focus();
+        },
+
+        completeTask: function(task) {
+            task.completed = true;
 
         },
 
         removeTask: function(task) {
-            
             this.tasks.$remove(task);
         }
-
     }
-}) 
+})
