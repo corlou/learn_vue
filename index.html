@@ -11,11 +11,21 @@
 <body>
     <div class="container">
         <div id="tasks">
-            {{ heading }}
+            <div>
+                <h1>Tasks</h1>
+                <ol class="list-group">
+                    <li v-repeat="task: tasks">{{ task.body }}</li>
+                </ol>
+            </div>
 
-            <input v-model="heading">
-        
-        
+            <form>
+                <div class="form-group">
+                    <input class="form-control" placeholder="I need to..."></input>
+                </div>
+                <button class="btn btn-primary">Add Task</button>
+            </form>
+
+  
         </div>
     </div>
 

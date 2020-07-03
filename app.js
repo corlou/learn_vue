@@ -2,6 +2,8 @@ new Vue({
     el: '#tasks',
 
     data: {
-        heading: 'Hello World'
+        tasks: [
+            { body: 'Go to the store', completed: false }
+        ]
     }
 })
