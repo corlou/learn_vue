@@ -6,18 +6,20 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
     <div class="container">
         <div id="tasks">
             <div>
-                <h1>Tasks</h1>
+                <h1>Tasks({{ tasks.length }})</h1>
                 <ol class="list-group">
                     <li v-repeat="task: tasks"
                         class="list-group-item"
                     >
                         {{ task.body }}
+                        <button>&#10007;</button>
                     </li>
                 </ol>
             </div>
