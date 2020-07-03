@@ -17,8 +17,13 @@ new Vue({
                 completed: false
 
             });
-
             this.newTask = '';
+        },
+
+        removeTask: function(task) {
+            
+            this.tasks.$remove(task);
         }
+
     }
 }) 
