@@ -8,6 +8,20 @@ new Vue({
         newTask: ''
     },
 
+    computed: {
+        completions: function() {
+            return this.tasks.filter(function(task) {
+                return task.completed;
+            });
+        },
+
+        remaining: function() {
+            return this.tasks.filter(function(task) {
+                return ! task.completed;
+            });
+        }
+    },
+
     filters: {
         inProcess: function(tasks) {
             return tasks.filter(function(task) {
