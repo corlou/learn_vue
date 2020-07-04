@@ -58,6 +58,12 @@ new Vue({
 
         },
 
+        completeAll: function() {
+            this.tasks.forEach(function(task) {
+                task.completed = true;
+            });
+        },
+
         removeTask: function(task) {
             this.tasks.$remove(task);
         }

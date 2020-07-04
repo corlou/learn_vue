@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div id="tasks">
-            <div>
+            <div v-show="remaining.length">
                 <h1>Tasks({{ remaining.length }})</h1>
                 <ol class="list-group">
                     <li v-repeat="task: tasks | inProcess"
@@ -36,6 +36,11 @@
                     </input>
                 </div>
                 <button class="btn btn-primary">Add Task</button>
+                <button v-on="click: completeAll"
+                        class="btn btn-default"
+                >
+                    Mark all as Completed?
+                </button>
             </form>
             <div v-if="completions.length">
                 <h2>Completed ({{ completions.length }})</h2>
